@@ -476,15 +476,15 @@ Use this parameter if you do not want a confirmation prompt to interrupt automat
 
 ---
 
-**--invalidate-distribution**
+**--no-invalidate-distribution**
 
-_optional_, default `false` (creates an invalidation for the CloudFront distribution)
+_optional_, default `false` (disables creating an invalidation for the CloudFront distribution)
 
 ```bash
-serverless client deploy --invalidate-distribution
+serverless client deploy --no-invalidate-distribution
 ```
 
-Use this parameter if you want to invalidate the CloudFront distribution. An invalidation will be created for the path `/*`.
+Use this parameter if you do not want to invalidate the CloudFront distribution. Invalidations are  for the path `/*`.
 
 ---
 
