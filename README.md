@@ -497,6 +497,7 @@ Use this parameter if you want to invalidate the CloudFront distribution. An inv
 - [harmon25](https://github.com/harmon25)
 - [jmortlock](https://github.com/jmortlock)
 - [haochang](https://github.com/haochang)
+- [hakimio](https://github.com/hakimio)
 
 ## Credits
 Forked from the [**serverless-api-cloudfront**](https://github.com/Droplr/serverless-api-cloudfront/)  
