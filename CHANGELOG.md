@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.1] - 2020-3-18
+Thanks @artoliukkonen
+
+- Add `noConfirm` setting to allow changing the client upload behavior via config 
+
+
 ## [0.7.0] - 2019-9-15
 Thanks @hakimio
 
@@ -66,7 +72,8 @@ Better support for generating client code on Windows
 
 - Initial release
 
-[Unreleased]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.6.1...v0.7.0
 [0.6.1]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.5.8...v0.6.0

@@ -515,6 +515,7 @@ Use this parameter if you do not want to invalidate the CloudFront distribution.
 - [jmortlock](https://github.com/jmortlock)
 - [haochang](https://github.com/haochang)
 - [hakimio](https://github.com/hakimio)
+- [artoliukkonen](https://github.com/artoliukkonen)
 
 ## Credits
 Forked from the [**serverless-api-cloudfront**](https://github.com/Droplr/serverless-api-cloudfront/)  
