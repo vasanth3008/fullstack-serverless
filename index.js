@@ -258,7 +258,7 @@ class ServerlessFullstackPlugin {
     }
 
     removeApiGatewayOrigin(baseResources) {
-        this.serverless.cli.log(`ApiGatewayRestApi not found, removing orgin from CloudFront...`);
+        this.serverless.cli.log(`ApiGatewayRestApi not found, removing origin from CloudFront...`);
         const distributionConfig = baseResources.Resources.ApiDistribution.Properties.DistributionConfig;
         distributionConfig.Origins = _.filter(distributionConfig.Origins, (origin => {
             return origin.Id !== 'ApiGateway';
