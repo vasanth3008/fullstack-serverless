@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add `invalidationPaths` setting to allow defining custom invalidation paths for the cloudfront distribution
+
 ## [0.7.1] - 2020-3-18
 Thanks @artoliukkonen
 
