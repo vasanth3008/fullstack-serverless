@@ -155,7 +155,8 @@ class ServerlessFullstackPlugin {
             bucketName,
             headerSpec,
             indexDoc,
-            errorDoc;
+            errorDoc,
+            invalidationPaths;
 
         return this.validateConfig()
             .then(() => {
@@ -175,6 +176,14 @@ class ServerlessFullstackPlugin {
                 headerSpec = this.options.objectHeaders;
                 indexDoc = this.options.indexDocument || "index.html";
                 errorDoc = this.options.errorDocument || "error.html";
+                invalidationPaths = this.options.invalidationPaths || ['/*'];
+
+                if (!Array.isArray(invalidationPaths)) {
+                    invalidationPaths = [invalidationPaths];
+                }
+                
+                //paths must start with '/'
+                invalidationPaths = invalidationPaths.map(path => path[0] === '/' ? path : '/' + path);
 
                 const deployDescribe = ['This deployment will:'];
 
@@ -225,7 +234,7 @@ class ServerlessFullstackPlugin {
                 if (this.cliOptions['invalidate-distribution'] === false) {
                     this.serverless.cli.log(`Skipping cloudfront invalidation...`);
                 } else {
-                    return invalidateCloudfrontDistribution(this.serverless);
+                    return invalidateCloudfrontDistribution(this.serverless, invalidationPaths);
                 }
             })
             .catch(error => {

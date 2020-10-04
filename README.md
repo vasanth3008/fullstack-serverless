@@ -63,6 +63,9 @@ custom:
     indexDocument: index.html                  # The index document to use
     errorDocument: error.html                  # The error document to use
     singlePageApp: false                       # If true 403 errors will be rerouted (missing assets) to your root index document to support single page apps like React and Angular where the js framework handles routing
+    invalidationPaths:                         # Custom invalidationPaths for cloudfront in case your frontend framework uses filename hashing
+      - /index.html
+      - /error.html
     compressWebContent: true                   # Use compression when serving web content
     apiPath: api                               # The path prefix for your API Gateway lambdas. The path for the lambda http event trigger needs to start with this too eg. api/myMethod
     apiGatewayRestApiId: a12bc34df5            # If "Api Gateway Rest Api" is not part of the same serverless template, you can set your API id here 
@@ -321,6 +324,24 @@ If true 403 errors will be rerouted (missing assets) to your root index document
     
 ---
 
+**invalidationPaths**
+
+_optional_, default: `['/*']`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    invalidationPaths:
+      - /index.html
+      - /error.html
+    ...
+```
+
+Custom invalidationPaths for cloudfront in case your frontend framework uses filename hashing
+    
+---
+
 **compressWebContent**
 
 _optional_, default: `true`
@@ -516,6 +537,7 @@ Use this parameter if you do not want to invalidate the CloudFront distribution.
 - [haochang](https://github.com/haochang)
 - [hakimio](https://github.com/hakimio)
 - [artoliukkonen](https://github.com/artoliukkonen)
+- [pecirep](https://github.com/pecirep)
 
 ## Credits
 Forked from the [**serverless-api-cloudfront**](https://github.com/Droplr/serverless-api-cloudfront/)  
