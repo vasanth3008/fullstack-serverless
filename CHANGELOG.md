@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Add `invalidationPaths` setting to allow defining custom invalidation paths for the cloudfront distribution
+- Add `origins` setting to allow adding additional distribution origins in the form of CloudFormation resources
+- Add `cacheBehaviors` setting to allow adding additional distribution cache behaviors in the form of CloudFormation resources
 
 ## [0.7.1] - 2020-3-18
 Thanks @artoliukkonen

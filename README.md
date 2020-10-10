@@ -475,6 +475,67 @@ Use this parameter if you do not want a confirmation prompt to interrupt automat
 
 ---
 
+**origins**
+
+_optional_, default: `not set`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    origins:
+      - Id: Media
+        DomainName: 
+          Fn::GetAtt:
+            - MediaBucket
+            - DomainName
+        S3OriginConfig:
+          OriginAccessIdentity:
+            Fn::Join:
+              - ''
+              - - origin-access-identity/cloudfront/
+                - { Ref: S3OriginAccessIdentity }
+    ...
+```
+
+Use this parameter if you want to add additional origins to the CloudFormation resources.
+
+---
+
+**cacheBehaviors**
+
+_optional_, default: `not set`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    cacheBehaviors:
+      - TargetOriginId: Media
+        PathPattern: media/*
+        AllowedMethods:
+          - GET
+          - HEAD
+          - OPTIONS
+        CachedMethods:
+          - HEAD
+          - GET
+        ForwardedValues:
+          QueryString: true
+          Headers:
+            - Accept
+            - Referer
+            - Authorization
+            - Content-Type
+        ViewerProtocolPolicy: redirect-to-https
+        ...
+    ...
+```
+
+Use this parameter if you want to add additional cache behaviors to the CloudFormation resources.
+
+---
+
 ### Command-line Parameters
 
 
