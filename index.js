@@ -386,6 +386,13 @@ class ServerlessFullstackPlugin {
                 origin.OriginPath = `/${this.getStage()}`;
             }
         }
+        
+        const customOrigins = this.getConfig('origins', null);
+        if (customOrigins) {
+            distributionConfig.Origins.push(
+                ...customOrigins
+            );
+        }
     }
 
     preparePathPattern(distributionConfig) {
@@ -395,6 +402,13 @@ class ServerlessFullstackPlugin {
             if (cacheBehavior.TargetOriginId === 'ApiGateway') {
                 cacheBehavior.PathPattern = `${apiPath}/*`;
             }
+        }
+        
+        const customCacheBehaviors = this.getConfig('cacheBehaviors', null);
+        if (customCacheBehaviors) {
+            distributionConfig.CacheBehaviors.push(
+                ...customCacheBehaviors
+            );
         }
     }
 
