@@ -629,6 +629,7 @@ Use this parameter if you do not want to invalidate the CloudFront distribution.
 - [hakimio](https://github.com/hakimio)
 - [artoliukkonen](https://github.com/artoliukkonen)
 - [pecirep](https://github.com/pecirep)
+- [pecirep](https://github.com/miguel-a-calles-mba)
 
 ## Credits
 Forked from the [**serverless-api-cloudfront**](https://github.com/Droplr/serverless-api-cloudfront/)  

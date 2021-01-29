@@ -7,10 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [0.8.0] - 2021-1-28
+Thanks @pecirep, @miguel-a-calles-mba, @superandrew213
+
+### Added
 - Add `invalidationPaths` setting to allow defining custom invalidation paths for the cloudfront distribution
 - Add `origins` setting to allow adding additional distribution origins in the form of CloudFormation resources
+- Add `defaultCacheBehavior` setting to allow adding the default distribution cache behaviors in the form of CloudFormation resources
 - Add `cacheBehaviors` setting to allow adding additional distribution cache behaviors in the form of CloudFormation resources
+- Add `--no-client-deploy` CLI option to skip deploying client code to S3
 
+### Fixed
+- Typos
 ## [0.7.1] - 2020-3-18
 Thanks @artoliukkonen
 
@@ -76,7 +85,8 @@ Better support for generating client code on Windows
 
 - Initial release
 
-[Unreleased]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.1...HEAD
+[Unreleased]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.8.0...HEAD
+[0.7.2]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.1...v0.8.0
 [0.7.1]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.6.1...v0.7.0
 [0.6.1]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.6.0...v0.6.1
