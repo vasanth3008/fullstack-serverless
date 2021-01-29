@@ -5,8 +5,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/MadSkills-io/fullstack-serverless/master/LICENSE)
 [![npm downloads](https://img.shields.io/npm/dt/fullstack-serverless.svg?style=flat)](https://www.npmjs.com/package/fullstack-serverless)
 
-A [serverless](http://www.serverless.com) plugin that automatically creates an AWS CloudFront distribution that serves static web content from S3 and optionally routes API traffic
-to API Gateway.  
+A [serverless](http://www.serverless.com) plugin that automatically creates an AWS CloudFront distribution that serves static web content from S3 and optionally routes API traffic to API Gateway.  
 
 Home page - https://www.madskills.io/fullstack-serverless/
 
@@ -17,9 +16,10 @@ Home page - https://www.madskills.io/fullstack-serverless/
 - No CORS needed
 - Enables CDN caching of resources - so you don't waste Lambda invocations or API Gateway traffic
   for serving static files (just [set Cache-Control headers](https://serverless.com/framework/docs/providers/aws/events/apigateway/#custom-response-headers) in API responses)
-- Much more CloudWatch statistics of API usage (like bandwidth metrics)
+- More CloudWatch statistics of API usage (like bandwidth metrics)
 - Real world [access log](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) - out of the box, API Gateway currently does not provide any kind of real "apache-like" access logs for your invocations
 - [Web Application Firewall](https://aws.amazon.com/waf/) support - enable AWS WAF to protect your API from security threats
+- Can be used to manage S3 content and CloudFront without API Gateway by simply not defining any functions
 
 ## Before you begin
 * Install the serverless framework
@@ -499,6 +499,21 @@ custom:
 ```
 
 Use this parameter if you want to add additional origins to the CloudFormation resources.
+
+---
+
+**defaultCacheBehavior**
+
+_optional_, default: `not set`
+
+```yaml
+custom:
+  fullstack:
+    ...
+    defaultCacheBehavior:
+      MinTTL: 3600
+    ...
+```
 
 ---
 

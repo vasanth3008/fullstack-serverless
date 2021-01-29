@@ -149,6 +149,7 @@ class ServerlessFullstackPlugin {
     }
 
     processDeployment() {
+
         if(this.cliOptions['client-deploy'] !== false) {
             let region,
                 distributionFolder,
@@ -348,7 +349,7 @@ class ServerlessFullstackPlugin {
         this.prepareSinglePageApp(resources.Resources);
         this.prepareS3(resources.Resources);
         this.prepareMinimumProtocolVersion(distributionConfig);
-        this.prepareCompressWebContent(distributionConfig);
+        this.prepareDefaultCacheBehavior(distributionConfig);
 
     }
 
@@ -532,10 +533,15 @@ class ServerlessFullstackPlugin {
         resources.WebAppS3Bucket.Properties.WebsiteConfiguration.ErrorDocument = errorDocument;
     }
 
-    prepareCompressWebContent(distributionConfig) {
+    prepareDefaultCacheBehavior(distributionConfig) {
+        const defaultCacheBehavior = this.getConfig('defaultCacheBehavior', {})
         const compressWebContent = this.getConfig('compressWebContent', true);
 
-        distributionConfig.DefaultCacheBehavior.Compress = compressWebContent;
+        distributionConfig.DefaultCacheBehavior = Object.assign({},
+            distributionConfig.DefaultCacheBehavior,
+            defaultCacheBehavior,
+            { Compress: compressWebContent }
+        );
     }
 
     getBucketName(bucketName) {
