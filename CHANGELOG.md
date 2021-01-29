@@ -86,7 +86,7 @@ Better support for generating client code on Windows
 - Initial release
 
 [Unreleased]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.8.0...HEAD
-[0.7.2]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.1...v0.8.0
+[0.8.0]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.1...v0.8.0
 [0.7.1]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.6.1...v0.7.0
 [0.6.1]: https://github.com/MadSkills-io/fullstack-serverless/compare/v0.6.0...v0.6.1
