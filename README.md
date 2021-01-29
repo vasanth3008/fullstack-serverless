@@ -563,6 +563,21 @@ Use this parameter if you do not want to generate the client code before deployi
 
 ---
 
+**--no-client-deploy**
+
+_optional_, default `false` (deploys the generated client code by default)
+
+```bash
+serverless deploy --no-client-deploy
+```
+
+Use this parameter if you do not want to deploy the client along with the rest of the serverless stack. Almost certainly in this case you don't want to generate the client code either and will want to use 
+```bash
+serverless deploy --no-generate-client --no-client-deploy
+```
+
+---
+
 **--no-confirm**
 
 _optional_, default `false` (disables confirmation prompt)
