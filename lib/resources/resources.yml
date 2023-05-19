@@ -138,6 +138,7 @@ Resources:
                 Forward: all
             MinTTL: '0'
             DefaultTTL: '0'
+            MaxTTL: '0'
             TargetOriginId: ApiGateway
             ViewerProtocolPolicy: https-only
             PathPattern: api/*
